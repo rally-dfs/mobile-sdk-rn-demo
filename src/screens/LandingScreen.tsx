@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {Image, StyleSheet, View} from 'react-native';
 import ScreenContainer from '../components/ScreenContainer';
