@@ -3,6 +3,7 @@ import React from 'react';
 import {Image, Text, View} from 'react-native';
 import ScreenContainer from '../components/ScreenContainer';
 import StandardButton from '../components/StandardButton';
+import {StandardHeader} from '../components/StandardHeader';
 
 export default function ProfileScreen() {
   return (
@@ -30,18 +31,5 @@ export default function ProfileScreen() {
         </View>
       </ScreenContainer>
     </>
-  );
-}
-
-function StandardHeader() {
-  return (
-    <View
-      style={{
-        height: 112,
-        borderBottomWidth: 1,
-        borderBottomColor: '#EFEFF0',
-        backgroundColor: '#F5F5F5',
-      }}
-    />
   );
 }

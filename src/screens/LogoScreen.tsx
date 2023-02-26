@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import {ActivityIndicator, Image, Text, View} from 'react-native';
 import ScreenContainer from '../components/ScreenContainer';
 import StandardButton from '../components/StandardButton';
+import {StandardHeader} from '../components/StandardHeader';
 
 function fakeSendRly() {
   return new Promise(resolve => {
@@ -73,18 +74,5 @@ export default function LogoScreen() {
         </View>
       </ScreenContainer>
     </>
-  );
-}
-
-function StandardHeader() {
-  return (
-    <View
-      style={{
-        height: 112,
-        borderBottomWidth: 1,
-        borderBottomColor: '#EFEFF0',
-        backgroundColor: '#F5F5F5',
-      }}
-    />
   );
 }
