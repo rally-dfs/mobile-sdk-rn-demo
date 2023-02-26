@@ -1,14 +1,9 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useState} from 'react';
-import {
-  ActivityIndicator,
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-} from 'react-native';
+import {ActivityIndicator, Text, View} from 'react-native';
 import ScreenContainer from '../components/ScreenContainer';
 import StandardButton from '../components/StandardButton';
+import {StandardHeader} from '../components/StandardHeader';
 
 const fakeClaim = () => {
   return new Promise(resolve =>
@@ -55,18 +50,5 @@ export default function ClaimScreen() {
         </View>
       </ScreenContainer>
     </>
-  );
-}
-
-function StandardHeader() {
-  return (
-    <View
-      style={{
-        height: 112,
-        borderBottomWidth: 1,
-        borderBottomColor: '#EFEFF0',
-        backgroundColor: '#F5F5F5',
-      }}
-    />
   );
 }
