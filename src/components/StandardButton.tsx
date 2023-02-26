@@ -9,7 +9,11 @@ type StandardButtonProps = {
 
 export default function StandardButton(props: StandardButtonProps) {
   return (
-    <TouchableHighlight style={styles.standardButton}>
+    <TouchableHighlight
+      style={styles.standardButton}
+      onPress={props.onPress}
+      activeOpacity={0.6}
+      underlayColor="#D7D7D7">
       <Text style={styles.buttonText}>{props.title}</Text>
     </TouchableHighlight>
   );
