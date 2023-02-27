@@ -1,11 +1,28 @@
 /* eslint-disable react-native/no-inline-styles */
 import {useNavigation} from '@react-navigation/native';
-import React from 'react';
-import {Image, StyleSheet, View} from 'react-native';
+import React, {useState} from 'react';
+import {ActivityIndicator, Image, StyleSheet, View} from 'react-native';
 import ScreenContainer from '../components/ScreenContainer';
 import StandardButton from '../components/StandardButton';
+import {createAccount, getAccount} from 'rly-network-mobile-sdk';
+
 export default function LandingScreen(): JSX.Element {
   const navigation = useNavigation();
+  const [takingAction, setTakingAction] = useState(false);
+
+  const setupAsGuest = async () => {
+    setTakingAction(true);
+
+    const act = await getAccount();
+
+    if (!act) {
+      console.log('No account found, creating a RLY account on device');
+      await createAccount();
+    }
+    //@ts-ignore
+    navigation.navigate('Claim');
+  };
+
   return (
     <ScreenContainer>
       <View style={styles.welcomeContainer}>
@@ -22,15 +39,14 @@ export default function LandingScreen(): JSX.Element {
             }}
           />
           <View style={{marginTop: 12}}>
-            <StandardButton
-              title="Continue as guest"
-              onPress={() => {
-                //@ts-ignore
-                navigation.navigate('Claim');
-              }}
-            />
+            <StandardButton title="Continue as guest" onPress={setupAsGuest} />
           </View>
         </View>
+        {takingAction && (
+          <View style={{marginTop: 32}}>
+            <ActivityIndicator />
+          </View>
+        )}
       </View>
     </ScreenContainer>
   );
