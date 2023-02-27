@@ -15,6 +15,8 @@ export default function LandingScreen(): JSX.Element {
 
     const act = await getAccount();
 
+    console.log('account from device = ', act);
+
     if (!act) {
       console.log('No account found, creating a RLY account on device');
       await createAccount();
