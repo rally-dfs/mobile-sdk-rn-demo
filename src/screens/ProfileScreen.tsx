@@ -1,4 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
+import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {Image, Text, View} from 'react-native';
 import ScreenContainer from '../components/ScreenContainer';
@@ -6,6 +7,7 @@ import StandardButton from '../components/StandardButton';
 import {StandardHeader} from '../components/StandardHeader';
 
 export default function ProfileScreen() {
+  const navigation = useNavigation();
   return (
     <>
       <StandardHeader />
@@ -26,7 +28,13 @@ export default function ProfileScreen() {
             <StandardButton title="View on Explorer" onPress={async () => {}} />
           </View>
           <View style={{marginTop: 12}}>
-            <StandardButton title="View seed phrase" onPress={async () => {}} />
+            <StandardButton
+              title="View seed phrase"
+              onPress={async () => {
+                //@ts-ignore
+                navigation.navigate('Seed');
+              }}
+            />
           </View>
         </View>
       </ScreenContainer>

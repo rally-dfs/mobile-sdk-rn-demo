@@ -1,4 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
+import {useNavigation} from '@react-navigation/native';
 import React, {useState} from 'react';
 import {ActivityIndicator, Text, View} from 'react-native';
 import ScreenContainer from '../components/ScreenContainer';
@@ -14,13 +15,18 @@ const fakeClaim = () => {
 };
 
 export default function ClaimScreen() {
+  const navigation = useNavigation();
   const [claiming, setClaiming] = useState(false);
 
   const claimTokens = async () => {
     setClaiming(true);
+
     await fakeClaim();
 
     setClaiming(false);
+
+    //@ts-ignore
+    navigation.navigate('Home');
   };
   return (
     <>

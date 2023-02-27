@@ -1,17 +1,31 @@
+import {useNavigation} from '@react-navigation/native';
 import React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {
+  Image,
+  StyleSheet,
+  Text,
+  TouchableWithoutFeedback,
+  View,
+} from 'react-native';
 
 export function StandardHeader() {
+  const navigation = useNavigation();
   return (
     <View style={styles.mainContainer}>
       <View style={styles.itemContainer}>
         <View style={styles.balanceContainer}>
           <Text>8 RLY</Text>
         </View>
-        <Image
-          source={require('../../assets/images/avatar.png')}
-          style={styles.profilePic}
-        />
+        <TouchableWithoutFeedback
+          onPress={async () => {
+            //@ts-ignore
+            navigation.navigate('Profile');
+          }}>
+          <Image
+            source={require('../../assets/images/avatar.png')}
+            style={styles.profilePic}
+          />
+        </TouchableWithoutFeedback>
       </View>
     </View>
   );

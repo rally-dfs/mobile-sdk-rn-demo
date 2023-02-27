@@ -1,9 +1,11 @@
 /* eslint-disable react-native/no-inline-styles */
+import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {Image, StyleSheet, View} from 'react-native';
 import ScreenContainer from '../components/ScreenContainer';
 import StandardButton from '../components/StandardButton';
 export default function LandingScreen(): JSX.Element {
+  const navigation = useNavigation();
   return (
     <ScreenContainer>
       <View style={styles.welcomeContainer}>
@@ -12,9 +14,21 @@ export default function LandingScreen(): JSX.Element {
           style={styles.logoImage}
         />
         <View style={{marginTop: 96}}>
-          <StandardButton title="Sign up with app" onPress={() => {}} />
+          <StandardButton
+            title="Sign up with app"
+            onPress={() => {
+              //@ts-ignore
+              navigation.navigate('Signup');
+            }}
+          />
           <View style={{marginTop: 12}}>
-            <StandardButton title="Continue as guest" onPress={() => {}} />
+            <StandardButton
+              title="Continue as guest"
+              onPress={() => {
+                //@ts-ignore
+                navigation.navigate('Claim');
+              }}
+            />
           </View>
         </View>
       </View>
