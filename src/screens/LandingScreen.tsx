@@ -4,6 +4,7 @@ import React, {useState} from 'react';
 import {ActivityIndicator, Image, StyleSheet, View} from 'react-native';
 import ScreenContainer from '../components/ScreenContainer';
 import StandardButton from '../components/StandardButton';
+//@ts-ignore Need to address this on the actual SDK repo.
 import {createAccount, getAccount} from 'rly-network-mobile-sdk';
 
 export default function LandingScreen(): JSX.Element {
