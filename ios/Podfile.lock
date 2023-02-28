@@ -421,6 +421,8 @@ PODS:
     - React-perflogger (= 0.71.3)
   - rly-network-mobile-sdk (0.1.7):
     - React-Core
+  - RNCClipboard (1.11.2):
+    - React-Core
   - RNScreens (3.20.0):
     - React-Core
     - React-RCTImage
@@ -490,6 +492,7 @@ DEPENDENCIES:
   - React-runtimeexecutor (from `../node_modules/react-native/ReactCommon/runtimeexecutor`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - rly-network-mobile-sdk (from `../node_modules/rly-network-mobile-sdk`)
+  - "RNCClipboard (from `../node_modules/@react-native-clipboard/clipboard`)"
   - RNScreens (from `../node_modules/react-native-screens`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
@@ -582,6 +585,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon"
   rly-network-mobile-sdk:
     :path: "../node_modules/rly-network-mobile-sdk"
+  RNCClipboard:
+    :path: "../node_modules/@react-native-clipboard/clipboard"
   RNScreens:
     :path: "../node_modules/react-native-screens"
   Yoga:
@@ -636,6 +641,7 @@ SPEC CHECKSUMS:
   React-runtimeexecutor: 7bf0dafc7b727d93c8cb94eb00a9d3753c446c3e
   ReactCommon: 6f65ea5b7d84deb9e386f670dd11ce499ded7b40
   rly-network-mobile-sdk: 5cf62e7d2fb0215bbcdab75c0a76a2081048acaa
+  RNCClipboard: 3f0451a8100393908bea5c5c5b16f96d45f30bfc
   RNScreens: 218801c16a2782546d30bd2026bb625c0302d70f
   SocketRocket: fccef3f9c5cedea1353a9ef6ada904fde10d6608
   Yoga: 5ed1699acbba8863755998a4245daa200ff3817b

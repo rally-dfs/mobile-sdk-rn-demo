@@ -1,4 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
+import Clipboard from '@react-native-clipboard/clipboard';
 import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {Image, Text, View} from 'react-native';
@@ -42,7 +43,12 @@ export default function ProfileScreen() {
             {acountHumanReadable()}
           </Text>
           <View style={{marginTop: 48}}>
-            <StandardButton title="Copy address" onPress={async () => {}} />
+            <StandardButton
+              title="Copy address"
+              onPress={async () => {
+                Clipboard.setString(rlyAccount || '');
+              }}
+            />
           </View>
           <View style={{marginTop: 12}}>
             <StandardButton title="View on Explorer" onPress={async () => {}} />

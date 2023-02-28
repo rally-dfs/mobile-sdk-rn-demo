@@ -1,12 +1,27 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, {useState} from 'react';
+import Clipboard from '@react-native-clipboard/clipboard';
+import React, {useEffect, useState} from 'react';
 import {Text, View} from 'react-native';
 import ScreenContainer from '../components/ScreenContainer';
 import StandardButton from '../components/StandardButton';
 import {StandardHeader} from '../components/StandardHeader';
+import {getAccountPhrase} from 'rly-network-mobile-sdk';
 
 export default function SeedPhraseScreen() {
   const [didConfirm, setDidConfirm] = useState(false);
+  const [seed, setSeed] = useState<undefined | string>();
+
+  useEffect(() => {
+    const doAsyncWork = async () => {
+      if (!didConfirm) {
+        return;
+      }
+
+      const tmpSeed = await getAccountPhrase();
+      setSeed(tmpSeed);
+    };
+    doAsyncWork();
+  }, [didConfirm]);
 
   return (
     <>
@@ -37,12 +52,14 @@ export default function SeedPhraseScreen() {
                   fontStyle: 'italic',
                   paddingHorizontal: 48,
                 }}>
-                Some long string that foo bar seed phrase is blah
+                {seed}
               </Text>
               <View style={{marginTop: 48}}>
                 <StandardButton
                   title="Copy seed phrase"
-                  onPress={async () => {}}
+                  onPress={async () => {
+                    Clipboard.setString(seed || '');
+                  }}
                 />
               </View>
             </>
