@@ -16,12 +16,11 @@ function fakeSendRly() {
 }
 
 export default function LogoScreen() {
-  const [fakeBalance, setFakeBalance] = useState(10);
   const [transfering, setTransfering] = useState(false);
-  const [, setBalance] = useRecoilState(balanceState);
+  const [balance, setBalance] = useRecoilState(balanceState);
 
   useEffect(() => {
-    setBalance(8);
+    setBalance(10);
   }, [setBalance]);
 
   const sendRly = async () => {
@@ -29,17 +28,22 @@ export default function LogoScreen() {
 
     await fakeSendRly();
 
-    setFakeBalance(oldBalance => oldBalance - 1);
+    setBalance(oldBalance => {
+      if (!oldBalance) {
+        throw 'Something went very wrong, negative balance trying to be set';
+      }
+      return oldBalance - 1;
+    });
 
     setTransfering(false);
   };
 
   const logoColor = () => {
-    if (fakeBalance === 10) {
+    if (balance === 10) {
       return require('../../assets/images/black-logo.png');
     }
 
-    if (fakeBalance === 9) {
+    if (balance === 9) {
       return require('../../assets/images/orange-logo.png');
     }
 
