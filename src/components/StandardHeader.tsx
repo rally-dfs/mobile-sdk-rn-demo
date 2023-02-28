@@ -7,14 +7,17 @@ import {
   TouchableWithoutFeedback,
   View,
 } from 'react-native';
+import {useRecoilValue} from 'recoil';
+import {balance as balanceState} from '../state';
 
 export function StandardHeader() {
+  const balance = useRecoilValue(balanceState);
   const navigation = useNavigation();
   return (
     <View style={styles.mainContainer}>
       <View style={styles.itemContainer}>
         <View style={styles.balanceContainer}>
-          <Text>8 RLY</Text>
+          <Text>{`${balance} RLY`}</Text>
         </View>
         <TouchableWithoutFeedback
           onPress={async () => {

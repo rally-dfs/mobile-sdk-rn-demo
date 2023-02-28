@@ -1,9 +1,11 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {ActivityIndicator, Image, Text, View} from 'react-native';
+import {useRecoilState} from 'recoil';
 import ScreenContainer from '../components/ScreenContainer';
 import StandardButton from '../components/StandardButton';
 import {StandardHeader} from '../components/StandardHeader';
+import {balance as balanceState} from '../state';
 
 function fakeSendRly() {
   return new Promise(resolve => {
@@ -16,6 +18,11 @@ function fakeSendRly() {
 export default function LogoScreen() {
   const [fakeBalance, setFakeBalance] = useState(10);
   const [transfering, setTransfering] = useState(false);
+  const [, setBalance] = useRecoilState(balanceState);
+
+  useEffect(() => {
+    setBalance(8);
+  }, [setBalance]);
 
   const sendRly = async () => {
     setTransfering(true);
