@@ -6,22 +6,22 @@ import ScreenContainer from '../components/ScreenContainer';
 import StandardButton from '../components/StandardButton';
 //@ts-ignore Need to address this on the actual SDK repo.
 import {createAccount, getAccount} from 'rly-network-mobile-sdk';
+import {useRecoilState} from 'recoil';
+import {account} from '../state';
 
 export default function LandingScreen(): JSX.Element {
   const navigation = useNavigation();
   const [takingAction, setTakingAction] = useState(false);
+  const [, setRlyAccount] = useRecoilState(account);
 
   const setupAsGuest = async () => {
     setTakingAction(true);
 
+    await createAccount();
     const act = await getAccount();
 
-    console.log('account from device = ', act);
+    setRlyAccount(act);
 
-    if (!act) {
-      console.log('No account found, creating a RLY account on device');
-      await createAccount();
-    }
     //@ts-ignore
     navigation.navigate('Claim');
   };
