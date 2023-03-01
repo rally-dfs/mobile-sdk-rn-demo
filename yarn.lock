@@ -7172,9 +7172,9 @@ rlp@^2.2.4:
   dependencies:
     bn.js "^5.2.0"
 
-rly-network-mobile-sdk@rally-dfs/rly-network-mobile-sdk:
+rly-network-mobile-sdk@rally-dfs/rly-network-mobile-sdk#remove-lazy-creation-of-accounts-on-get:
   version "0.1.7"
-  resolved "https://codeload.github.com/rally-dfs/rly-network-mobile-sdk/tar.gz/5c9f0f34b77e1f3e2c82fa9f5346ce7de6c1bb40"
+  resolved "https://codeload.github.com/rally-dfs/rly-network-mobile-sdk/tar.gz/3752ac03e2c81ac69a5e24ef69eb21a29ee7e693"
   dependencies:
     "@ethersproject/shims" "^5.7.0"
     "@maticnetwork/maticjs" "^3.5.0"

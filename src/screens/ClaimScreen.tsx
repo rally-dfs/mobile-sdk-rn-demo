@@ -2,9 +2,11 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {useState} from 'react';
 import {ActivityIndicator, Text, View} from 'react-native';
+import {useRecoilState} from 'recoil';
 import ScreenContainer from '../components/ScreenContainer';
 import StandardButton from '../components/StandardButton';
 import {StandardHeader} from '../components/StandardHeader';
+import {balance as balanceState} from '../state';
 
 const fakeClaim = () => {
   return new Promise(resolve =>
@@ -17,11 +19,13 @@ const fakeClaim = () => {
 export default function ClaimScreen() {
   const navigation = useNavigation();
   const [claiming, setClaiming] = useState(false);
+  const [, setBalance] = useRecoilState(balanceState);
 
   const claimTokens = async () => {
     setClaiming(true);
 
     await fakeClaim();
+    setBalance(b => (b || 0) + 10);
 
     setClaiming(false);
 

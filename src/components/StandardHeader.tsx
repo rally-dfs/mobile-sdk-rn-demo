@@ -17,7 +17,7 @@ export function StandardHeader() {
     <View style={styles.mainContainer}>
       <View style={styles.itemContainer}>
         <View style={styles.balanceContainer}>
-          <Text>{`${balance} RLY`}</Text>
+          <Text>{`${balance || 0} RLY`}</Text>
         </View>
         <TouchableWithoutFeedback
           onPress={async () => {

@@ -51,6 +51,7 @@ export default function AppRouting() {
           initialRouteName="Home"
           screenOptions={{headerShown: false}}>
           <Stack.Screen name="Home" component={LogoScreen} />
+          <Stack.Screen name="Claim" component={ClaimScreen} />
           <Stack.Screen name="Profile" component={ProfileScreen} />
           <Stack.Screen name="Seed" component={SeedPhraseScreen} />
         </Stack.Navigator>
@@ -60,7 +61,6 @@ export default function AppRouting() {
           screenOptions={{headerShown: false}}>
           <Stack.Screen name="Landing" component={LandingScreen} />
           <Stack.Screen name="Signup" component={AppAccountSignupScreen} />
-          <Stack.Screen name="Claim" component={ClaimScreen} />
         </Stack.Navigator>
       )}
     </NavigationContainer>

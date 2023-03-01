@@ -1,5 +1,5 @@
 /* eslint-disable react-native/no-inline-styles */
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {ActivityIndicator, Image, Text, View} from 'react-native';
 import {useRecoilState} from 'recoil';
 import ScreenContainer from '../components/ScreenContainer';
@@ -18,10 +18,6 @@ function fakeSendRly() {
 export default function LogoScreen() {
   const [transfering, setTransfering] = useState(false);
   const [balance, setBalance] = useRecoilState(balanceState);
-
-  useEffect(() => {
-    setBalance(10);
-  }, [setBalance]);
 
   const sendRly = async () => {
     setTransfering(true);
