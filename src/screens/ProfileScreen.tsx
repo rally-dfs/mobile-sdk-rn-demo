@@ -3,15 +3,16 @@ import Clipboard from '@react-native-clipboard/clipboard';
 import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {Image, Text, View} from 'react-native';
-import {useRecoilValue} from 'recoil';
+import {useRecoilState, useRecoilValue} from 'recoil';
 import ScreenContainer from '../components/ScreenContainer';
 import StandardButton from '../components/StandardButton';
 import {StandardHeader} from '../components/StandardHeader';
-import {account} from '../state';
+import {account, userDetails as userDetailsAtom} from '../state';
 
 export default function ProfileScreen() {
   const navigation = useNavigation();
-  const rlyAccount = useRecoilValue(account);
+  const [rlyAccount, setRlyAccount] = useRecoilState(account);
+  const userDetails = useRecoilValue(userDetailsAtom);
 
   const acountHumanReadable = () => {
     if (!rlyAccount) {
@@ -27,6 +28,10 @@ export default function ProfileScreen() {
     return `${firstChars}...${lastChars}`;
   };
 
+  const deleteAccount = async () => {
+    setRlyAccount(undefined);
+  };
+
   return (
     <>
       <StandardHeader />
@@ -37,7 +42,7 @@ export default function ProfileScreen() {
             style={{marginTop: 32, height: 56, width: 56}}
           />
           <Text style={{fontSize: 20, fontWeight: 'bold', marginTop: 16}}>
-            @username
+            @{userDetails?.name}
           </Text>
           <Text style={{fontSize: 16, marginTop: 8}}>
             {acountHumanReadable()}
@@ -60,6 +65,12 @@ export default function ProfileScreen() {
                 //@ts-ignore
                 navigation.navigate('Seed');
               }}
+            />
+          </View>
+          <View style={{marginTop: 96}}>
+            <StandardButton
+              title="Delete RLY Account"
+              onPress={deleteAccount}
             />
           </View>
         </View>
