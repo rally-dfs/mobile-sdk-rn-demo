@@ -7172,9 +7172,9 @@ rlp@^2.2.4:
   dependencies:
     bn.js "^5.2.0"
 
-rly-network-mobile-sdk@rally-dfs/rly-network-mobile-sdk:
+rly-network-mobile-sdk@rally-dfs/rly-network-mobile-sdk#add-account-deletion:
   version "0.1.7"
-  resolved "https://codeload.github.com/rally-dfs/rly-network-mobile-sdk/tar.gz/480ab8838afa0b96a97bb5dc894a9bf754934b16"
+  resolved "https://codeload.github.com/rally-dfs/rly-network-mobile-sdk/tar.gz/6fb7f3f07c7223aa0d28182982cb2db300ee2e9c"
   dependencies:
     "@ethersproject/shims" "^5.7.0"
     "@maticnetwork/maticjs" "^3.5.0"

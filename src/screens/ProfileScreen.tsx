@@ -4,6 +4,7 @@ import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {Image, Text, View} from 'react-native';
 import {useRecoilState, useRecoilValue} from 'recoil';
+import {permanentlyDeleteAccount} from 'rly-network-mobile-sdk';
 import ScreenContainer from '../components/ScreenContainer';
 import StandardButton from '../components/StandardButton';
 import {StandardHeader} from '../components/StandardHeader';
@@ -29,6 +30,7 @@ export default function ProfileScreen() {
   };
 
   const deleteAccount = async () => {
+    await permanentlyDeleteAccount();
     setRlyAccount(undefined);
   };
 
