@@ -3,18 +3,11 @@ import {useNavigation} from '@react-navigation/native';
 import React, {useState} from 'react';
 import {ActivityIndicator, Text, View} from 'react-native';
 import {useRecoilState} from 'recoil';
+import {RlyNetwork} from '../../App';
 import ScreenContainer from '../components/ScreenContainer';
 import StandardButton from '../components/StandardButton';
 import {StandardHeader} from '../components/StandardHeader';
 import {balance as balanceState} from '../state';
-
-const fakeClaim = () => {
-  return new Promise(resolve =>
-    setTimeout(() => {
-      resolve(true);
-    }, 1000),
-  );
-};
 
 export default function ClaimScreen() {
   const navigation = useNavigation();
@@ -24,9 +17,11 @@ export default function ClaimScreen() {
   const claimTokens = async () => {
     setClaiming(true);
 
-    await fakeClaim();
-    setBalance(b => (b || 0) + 10);
+    await RlyNetwork.registerAccount();
 
+    const newBalance = await RlyNetwork.getBalance();
+
+    setBalance(newBalance);
     setClaiming(false);
 
     //@ts-ignore
