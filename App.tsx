@@ -8,11 +8,11 @@
 import React from 'react';
 
 import {RecoilRoot} from 'recoil';
-import {RlyDummyNetwork, Network} from 'rly-network-mobile-sdk';
+import {RlyMumbaiNetwork, Network} from 'rly-network-mobile-sdk';
 
 import AppRouting from './src/components/AppRouting';
 
-export const RlyNetwork: Network = RlyDummyNetwork;
+export const RlyNetwork: Network = RlyMumbaiNetwork;
 
 function App(): JSX.Element {
   return (

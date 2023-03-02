@@ -1,5 +1,5 @@
 import {useNavigation} from '@react-navigation/native';
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
   Image,
   StyleSheet,
@@ -7,12 +7,25 @@ import {
   TouchableWithoutFeedback,
   View,
 } from 'react-native';
-import {useRecoilValue} from 'recoil';
+import {useRecoilState} from 'recoil';
+import {RlyNetwork} from '../../App';
 import {balance as balanceState} from '../state';
 
 export function StandardHeader() {
-  const balance = useRecoilValue(balanceState);
+  const [balance, setBalance] = useRecoilState(balanceState);
   const navigation = useNavigation();
+
+  useEffect(() => {
+    const doAsyncWork = async () => {
+      if (!balance) {
+        console.log('Fetching balance from network');
+        const rlyBalance = await RlyNetwork.getBalance();
+        console.log('Network balance returned with ', rlyBalance);
+        setBalance(rlyBalance);
+      }
+    };
+    doAsyncWork();
+  }, [balance, setBalance]);
   return (
     <View style={styles.mainContainer}>
       <View style={styles.itemContainer}>
