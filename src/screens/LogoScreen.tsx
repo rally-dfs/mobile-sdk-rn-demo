@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useState} from 'react';
-import {ActivityIndicator, Image, Text, View} from 'react-native';
+import {ActivityIndicator, Text, View} from 'react-native';
 import {useRecoilState} from 'recoil';
 import {RlyNetwork} from '../../App';
 import ScreenContainer from '../components/ScreenContainer';
