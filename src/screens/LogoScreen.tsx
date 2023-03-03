@@ -60,6 +60,7 @@ export default function LogoScreen() {
           <View style={{marginTop: 24}}>
             <StandardButton
               title={transfering ? 'Sending...' : 'Use 1 RLY'}
+              disabled={!balance}
               onPress={sendRly}
             />
           </View>
