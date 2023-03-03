@@ -25,16 +25,16 @@ export default function LogoScreen() {
     setTransfering(false);
   };
 
-  const logoColor = () => {
+  const rewardLevelText = () => {
     if (balance === 10 || balance === 0) {
-      return require('../../assets/images/black-logo.png');
+      return '💩';
     }
 
     if (balance === 9) {
-      return require('../../assets/images/orange-logo.png');
+      return '🐸';
     }
 
-    return require('../../assets/images/green-logo.png');
+    return '🏆';
   };
   return (
     <>
@@ -53,10 +53,14 @@ export default function LogoScreen() {
               marginTop: 96,
               alignItems: 'center',
             }}>
-            <Image
-              source={logoColor()}
-              style={{height: 243, width: 243, alignSelf: 'center'}}
-            />
+            <Text
+              style={{
+                fontSize: 243,
+                textAlign: 'center',
+                alignSelf: 'center',
+              }}>
+              {rewardLevelText()}
+            </Text>
           </View>
           <View
             style={{
@@ -64,7 +68,7 @@ export default function LogoScreen() {
               alignItems: 'center',
               alignSelf: 'center',
             }}>
-            <Text style={{fontSize: 16}}>Upgrade your RLY Logo color!</Text>
+            <Text style={{fontSize: 16}}>Upgrade your RLY Status!</Text>
             <View style={{marginTop: 24}}>
               <StandardButton
                 title={transfering ? 'Sending...' : 'Use 1 RLY'}
