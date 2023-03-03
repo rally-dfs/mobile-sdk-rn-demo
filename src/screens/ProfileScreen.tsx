@@ -2,7 +2,7 @@
 import Clipboard from '@react-native-clipboard/clipboard';
 import {useNavigation} from '@react-navigation/native';
 import React from 'react';
-import {Image, Text, View} from 'react-native';
+import {Image, Linking, Text, View} from 'react-native';
 import {useRecoilState, useRecoilValue} from 'recoil';
 import {permanentlyDeleteAccount} from 'rly-network-mobile-sdk';
 import ScreenContainer from '../components/ScreenContainer';
@@ -58,7 +58,14 @@ export default function ProfileScreen() {
             />
           </View>
           <View style={{marginTop: 12}}>
-            <StandardButton title="View on Explorer" onPress={async () => {}} />
+            <StandardButton
+              title="View on Explorer"
+              onPress={async () => {
+                Linking.openURL(
+                  `https://mumbai.polygonscan.com/address/${rlyAccount}`,
+                );
+              }}
+            />
           </View>
           <View style={{marginTop: 12}}>
             <StandardButton
