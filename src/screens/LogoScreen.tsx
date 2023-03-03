@@ -2,18 +2,13 @@
 import React, {useState} from 'react';
 import {ActivityIndicator, Image, Text, View} from 'react-native';
 import {useRecoilState} from 'recoil';
+import {RlyNetwork} from '../../App';
 import ScreenContainer from '../components/ScreenContainer';
 import StandardButton from '../components/StandardButton';
 import {StandardHeader} from '../components/StandardHeader';
 import {balance as balanceState} from '../state';
 
-function fakeSendRly() {
-  return new Promise(resolve => {
-    setTimeout(() => {
-      resolve(undefined);
-    }, 1000);
-  });
-}
+const DESTINATION_PUBLIC_ADDRESS = '0xdACa431667d69cC1aE79dfeF247A2bb0A1e127C4';
 
 export default function LogoScreen() {
   const [transfering, setTransfering] = useState(false);
@@ -22,20 +17,16 @@ export default function LogoScreen() {
   const sendRly = async () => {
     setTransfering(true);
 
-    await fakeSendRly();
+    await RlyNetwork.transfer(DESTINATION_PUBLIC_ADDRESS, 1);
 
-    setBalance(oldBalance => {
-      if (!oldBalance) {
-        throw 'Something went very wrong, negative balance trying to be set';
-      }
-      return oldBalance - 1;
-    });
+    const rlyBalance = await RlyNetwork.getBalance();
 
+    setBalance(rlyBalance);
     setTransfering(false);
   };
 
   const logoColor = () => {
-    if (balance === 10) {
+    if (balance === 10 || balance === 0) {
       return require('../../assets/images/black-logo.png');
     }
 

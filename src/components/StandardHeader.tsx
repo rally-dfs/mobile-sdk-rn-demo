@@ -18,19 +18,18 @@ export function StandardHeader() {
   useEffect(() => {
     const doAsyncWork = async () => {
       if (!balance) {
-        console.log('Fetching balance from network');
         const rlyBalance = await RlyNetwork.getBalance();
-        console.log('Network balance returned with ', rlyBalance);
         setBalance(rlyBalance);
       }
     };
     doAsyncWork();
   }, [balance, setBalance]);
+
   return (
     <View style={styles.mainContainer}>
       <View style={styles.itemContainer}>
         <View style={styles.balanceContainer}>
-          <Text>{`${balance || '-'} RLY`}</Text>
+          <Text>{`${balance === undefined ? '-' : balance} RLY`}</Text>
         </View>
         <TouchableWithoutFeedback
           onPress={async () => {
