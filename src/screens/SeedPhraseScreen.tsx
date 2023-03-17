@@ -6,6 +6,7 @@ import ScreenContainer from '../components/ScreenContainer';
 import StandardButton from '../components/StandardButton';
 import {StandardHeader} from '../components/StandardHeader';
 import {getAccountPhrase} from 'rly-network-mobile-sdk';
+import InfoButton from '../components/InfoButton';
 
 export default function SeedPhraseScreen() {
   const [didConfirm, setDidConfirm] = useState(false);
@@ -66,6 +67,21 @@ export default function SeedPhraseScreen() {
           )}
         </View>
       </ScreenContainer>
+
+      <InfoButton>
+        <PreConfirmInfo />
+      </InfoButton>
+    </>
+  );
+}
+
+function PreConfirmInfo() {
+  return (
+    <>
+      <Text>
+        It’s important to educate users to keep their seed phrases safe and how
+        it can be used to import to another device or external wallet.
+      </Text>
     </>
   );
 }

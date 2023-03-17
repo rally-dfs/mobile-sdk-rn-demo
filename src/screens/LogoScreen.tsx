@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import {ActivityIndicator, Text, View} from 'react-native';
 import {useRecoilState} from 'recoil';
 import {RlyNetwork} from '../../App';
+import InfoButton from '../components/InfoButton';
 import ScreenContainer from '../components/ScreenContainer';
 import StandardButton from '../components/StandardButton';
 import {StandardHeader} from '../components/StandardHeader';
@@ -85,6 +86,27 @@ export default function LogoScreen() {
           </View>
         </ScreenContainer>
       )}
+      <InfoButton>
+        <>
+          <Text>Users can engage with applications and use their tokens.</Text>
+          <Text style={{marginTop: 18}}>
+            In this example, 1 RLY token will be transferred from the user’s
+            crypto account to a destination wallet and the in-app icon will
+            change.
+          </Text>
+          <Text style={{marginTop: 18}}>
+            This transaction is a gasless transaction sponsored by the RLY
+            Network Association; the user will not have to fund the on chain
+            transaction or maintain a balance of native tokens.
+          </Text>
+          <Text style={{marginTop: 18}}>
+            Gasless transactions are wrapped and executed by a relayer. Gas
+            costs are paid for by the relayer using a system of open source
+            smart contracts maintained by the RLY Network Association.
+          </Text>
+          <Text style={{marginTop: 18}}>Learn more at devproperly.com</Text>
+        </>
+      </InfoButton>
     </>
   );
 }

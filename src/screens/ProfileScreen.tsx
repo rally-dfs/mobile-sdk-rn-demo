@@ -5,6 +5,7 @@ import React from 'react';
 import {Image, Linking, Text, View} from 'react-native';
 import {useRecoilState, useRecoilValue} from 'recoil';
 import {permanentlyDeleteAccount} from 'rly-network-mobile-sdk';
+import InfoButton from '../components/InfoButton';
 import ScreenContainer from '../components/ScreenContainer';
 import StandardButton from '../components/StandardButton';
 import {StandardHeader} from '../components/StandardHeader';
@@ -84,6 +85,18 @@ export default function ProfileScreen() {
           </View>
         </View>
       </ScreenContainer>
+      <InfoButton>
+        <>
+          <Text>
+            Developers have the ability to display the users public address and
+            seed phrase at any point of the application experience.
+          </Text>
+          <Text style={{marginTop: 18}}>
+            Viewing on explorer links out to an explorer with the user’s public
+            key to verify their on-chain transaction.
+          </Text>
+        </>
+      </InfoButton>
     </>
   );
 }
