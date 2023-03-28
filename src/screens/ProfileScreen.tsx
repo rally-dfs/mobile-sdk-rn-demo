@@ -30,7 +30,7 @@ export default function ProfileScreen() {
     return `${firstChars}...${lastChars}`;
   };
 
-  const deleteAccount = async () => {
+  const resetDemo = async () => {
     await permanentlyDeleteAccount();
     setRlyAccount(undefined);
   };
@@ -78,10 +78,7 @@ export default function ProfileScreen() {
             />
           </View>
           <View style={{marginTop: 96}}>
-            <StandardButton
-              title="Delete RLY Account"
-              onPress={deleteAccount}
-            />
+            <StandardButton title="Reset Demo" onPress={resetDemo} />
           </View>
         </View>
       </ScreenContainer>
