@@ -4,6 +4,7 @@ import React, {useState} from 'react';
 import {ActivityIndicator, Text, View} from 'react-native';
 import {useRecoilState} from 'recoil';
 import {RlyNetwork} from '../../App';
+import InfoButton from '../components/InfoButton';
 import ScreenContainer from '../components/ScreenContainer';
 import StandardButton from '../components/StandardButton';
 import {StandardHeader} from '../components/StandardHeader';
@@ -54,6 +55,20 @@ export default function ClaimScreen() {
           )}
         </View>
       </ScreenContainer>
+
+      <InfoButton>
+        <>
+          <Text>
+            Once the crypto account is created on behalf of the user by the
+            developer, their account can be prefunded with a fixed amount of RLY
+            token (Benefit for apps that are powered by RLY token).
+          </Text>
+          <Text style={{marginTop: 18}}>
+            In this example, 10 RLY will be distributed to the user’s crypto
+            account funded by RLY Network Association in a gasless transaction.
+          </Text>
+        </>
+      </InfoButton>
     </>
   );
 }
