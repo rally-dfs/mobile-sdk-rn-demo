@@ -2223,9 +2223,9 @@
     "@types/node" "*"
 
 "@types/node@*":
-  version "18.15.13"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.15.13.tgz#f64277c341150c979e42b00e4ac289290c9df469"
-  integrity sha512-N+0kuo9KgrUQ1Sn/ifDXsvg0TTleP7rIy4zOBGECxAljqvqfqpTfzx0Q1NUedOixRMBfe2Whhb056a42cWs26Q==
+  version "18.16.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.16.1.tgz#5db121e9c5352925bb1f1b892c4ae620e3526799"
+  integrity sha512-DZxSZWXxFfOlx7k7Rv4LAyiMroaxa3Ly/7OOzZO8cBNho0YzAi4qlbrx8W27JGqG57IgR/6J7r+nOJWw6kcvZA==
 
 "@types/pbkdf2@^3.0.0":
   version "3.1.0"
@@ -7165,7 +7165,7 @@ rlp@^2.2.4:
 
 rly-network-mobile-sdk@rally-dfs/rly-network-mobile-sdk:
   version "0.1.7"
-  resolved "https://codeload.github.com/rally-dfs/rly-network-mobile-sdk/tar.gz/d53379068ca7285576d43d01b1ee2606dfabd148"
+  resolved "https://codeload.github.com/rally-dfs/rly-network-mobile-sdk/tar.gz/956cf7de7902d5ae457d057c64862a7b3e1398d8"
   dependencies:
     "@ethersproject/shims" "^5.7.0"
     "@maticnetwork/maticjs" "^3.5.0"
