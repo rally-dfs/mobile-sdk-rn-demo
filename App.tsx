@@ -7,8 +7,8 @@
 
 import React from 'react';
 
-import {RecoilRoot} from 'recoil';
-import {RlyMumbaiNetwork, Network} from 'rly-network-mobile-sdk';
+import { RecoilRoot } from 'recoil';
+import { RlyMumbaiNetwork, Network } from '@rly-network/mobile-sdk';
 
 import AppRouting from './src/components/AppRouting';
 

@@ -1,15 +1,15 @@
 /* eslint-disable react-native/no-inline-styles */
-import {useNavigation} from '@react-navigation/native';
-import React, {useState} from 'react';
-import {StyleSheet, Text, TextInput, View} from 'react-native';
-import {useRecoilState} from 'recoil';
+import { useNavigation } from '@react-navigation/native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, TextInput, View } from 'react-native';
+import { useRecoilState } from 'recoil';
 import ScreenContainer from '../components/ScreenContainer';
 import StandardButton from '../components/StandardButton';
-import {account, userDetails as userDetailsState} from '../state';
+import { account, userDetails as userDetailsState } from '../state';
 import {
   createAccount as createRlyAccount,
   getAccount,
-} from 'rly-network-mobile-sdk';
+} from '@rly-network/mobile-sdk';
 import InfoButton from '../components/InfoButton';
 
 export default function AppAccountSignupScreen() {
@@ -21,7 +21,7 @@ export default function AppAccountSignupScreen() {
   const [name, setName] = useState('');
 
   const createAccount = async () => {
-    setUserDetails({name: name, username: username});
+    setUserDetails({ name: name, username: username });
 
     await createRlyAccount();
     const rlyAct = await getAccount();
@@ -35,10 +35,10 @@ export default function AppAccountSignupScreen() {
   return (
     <>
       <ScreenContainer>
-        <View style={{marginTop: 192, alignSelf: 'center'}}>
-          <Text style={{fontSize: 18}}>Create your demo account</Text>
+        <View style={{ marginTop: 192, alignSelf: 'center' }}>
+          <Text style={{ fontSize: 18 }}>Create your demo account</Text>
         </View>
-        <View style={{marginTop: 24, alignItems: 'center'}}>
+        <View style={{ marginTop: 24, alignItems: 'center' }}>
           <TextInput
             placeholder="Name"
             style={styles.textInput}
@@ -47,7 +47,7 @@ export default function AppAccountSignupScreen() {
             }}
           />
         </View>
-        <View style={{marginTop: 12, alignItems: 'center'}}>
+        <View style={{ marginTop: 12, alignItems: 'center' }}>
           <TextInput placeholder="Username" style={styles.textInput} />
         </View>
         <View
@@ -71,17 +71,17 @@ export default function AppAccountSignupScreen() {
             Developers can choose when to create a crypto account and map it to
             the app account.
           </Text>
-          <Text style={{marginTop: 18}}>
+          <Text style={{ marginTop: 18 }}>
             Account generation is done using BIP39 mnemonic generation to create
             a hierarchical-deterministic (HD) wallet. This then uses this
             mnemonic to extract a private key from the default Ethereum path.
           </Text>
-          <Text style={{marginTop: 18}}>
+          <Text style={{ marginTop: 18 }}>
             Storage utilizes hardware encryption and low level OS key storage
             technology. This is the same technology that powers all iOS
             passphrase and keychain encryption technologies.
           </Text>
-          <Text style={{marginTop: 18}}>Learn more at devproperly.com</Text>
+          <Text style={{ marginTop: 18 }}>Learn more at devproperly.com</Text>
         </>
       </InfoButton>
     </>

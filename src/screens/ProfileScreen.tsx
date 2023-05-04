@@ -1,15 +1,15 @@
 /* eslint-disable react-native/no-inline-styles */
 import Clipboard from '@react-native-clipboard/clipboard';
-import {useNavigation} from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import {Image, Linking, Text, View} from 'react-native';
-import {useRecoilState, useRecoilValue} from 'recoil';
-import {permanentlyDeleteAccount} from 'rly-network-mobile-sdk';
+import { Image, Linking, Text, View } from 'react-native';
+import { useRecoilState, useRecoilValue } from 'recoil';
+import { permanentlyDeleteAccount } from '@rly-network/mobile-sdk';
 import InfoButton from '../components/InfoButton';
 import ScreenContainer from '../components/ScreenContainer';
 import StandardButton from '../components/StandardButton';
-import {StandardHeader} from '../components/StandardHeader';
-import {account, userDetails as userDetailsAtom} from '../state';
+import { StandardHeader } from '../components/StandardHeader';
+import { account, userDetails as userDetailsAtom } from '../state';
 
 export default function ProfileScreen() {
   const navigation = useNavigation();
@@ -39,18 +39,18 @@ export default function ProfileScreen() {
     <>
       <StandardHeader />
       <ScreenContainer>
-        <View style={{flex: 1, alignItems: 'center'}}>
+        <View style={{ flex: 1, alignItems: 'center' }}>
           <Image
             source={require('../../assets/images/avatar.png')}
-            style={{marginTop: 32, height: 56, width: 56}}
+            style={{ marginTop: 32, height: 56, width: 56 }}
           />
-          <Text style={{fontSize: 20, fontWeight: 'bold', marginTop: 16}}>
+          <Text style={{ fontSize: 20, fontWeight: 'bold', marginTop: 16 }}>
             @{userDetails?.name}
           </Text>
-          <Text style={{fontSize: 16, marginTop: 8}}>
+          <Text style={{ fontSize: 16, marginTop: 8 }}>
             {acountHumanReadable()}
           </Text>
-          <View style={{marginTop: 48}}>
+          <View style={{ marginTop: 48 }}>
             <StandardButton
               title="Copy address"
               onPress={async () => {
@@ -58,7 +58,7 @@ export default function ProfileScreen() {
               }}
             />
           </View>
-          <View style={{marginTop: 12}}>
+          <View style={{ marginTop: 12 }}>
             <StandardButton
               title="View on Explorer"
               onPress={async () => {
@@ -68,7 +68,7 @@ export default function ProfileScreen() {
               }}
             />
           </View>
-          <View style={{marginTop: 12}}>
+          <View style={{ marginTop: 12 }}>
             <StandardButton
               title="View seed phrase"
               onPress={async () => {
@@ -77,7 +77,7 @@ export default function ProfileScreen() {
               }}
             />
           </View>
-          <View style={{marginTop: 96}}>
+          <View style={{ marginTop: 96 }}>
             <StandardButton title="Reset Demo" onPress={resetDemo} />
           </View>
         </View>
@@ -88,7 +88,7 @@ export default function ProfileScreen() {
             Developers have the ability to display the users public address and
             seed phrase at any point of the application experience.
           </Text>
-          <Text style={{marginTop: 18}}>
+          <Text style={{ marginTop: 18 }}>
             Viewing on explorer links out to an explorer with the user’s public
             key to verify their on-chain transaction.
           </Text>
