@@ -7172,7 +7172,7 @@ rlp@^2.2.4:
 
 rly-network-mobile-sdk@rally-dfs/rly-network-mobile-sdk:
   version "0.1.7"
-  resolved "https://codeload.github.com/rally-dfs/rly-network-mobile-sdk/tar.gz/fcc0e3b1fcd3a03b7e6ff66753eade084913f666"
+  resolved "https://codeload.github.com/rally-dfs/rly-network-mobile-sdk/tar.gz/20550593670694af328bea74dc2de362590b4113"
   dependencies:
     "@ethersproject/shims" "^5.7.0"
     "@maticnetwork/maticjs" "^3.5.0"
