@@ -9,7 +9,6 @@ import ScreenContainer from '../components/ScreenContainer';
 import StandardButton from '../components/StandardButton';
 import {StandardHeader} from '../components/StandardHeader';
 import {balance as balanceState} from '../state';
-import {sleep} from '../utils';
 
 export default function ClaimScreen() {
   const navigation = useNavigation();
@@ -21,12 +20,7 @@ export default function ClaimScreen() {
 
     await RlyNetwork.registerAccount();
 
-    let newBalance = await RlyNetwork.getBalance();
-
-    while (newBalance !== 10) {
-      sleep(1000);
-      newBalance = await RlyNetwork.getBalance();
-    }
+    const newBalance = await RlyNetwork.getBalance();
 
     setBalance(newBalance);
     setClaiming(false);

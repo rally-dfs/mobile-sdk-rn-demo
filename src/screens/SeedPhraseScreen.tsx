@@ -5,7 +5,7 @@ import {Text, View} from 'react-native';
 import ScreenContainer from '../components/ScreenContainer';
 import StandardButton from '../components/StandardButton';
 import {StandardHeader} from '../components/StandardHeader';
-import {getAccountPhrase} from 'rly-network-mobile-sdk';
+import {getAccountPhrase} from '@rly-network/mobile-sdk';
 import InfoButton from '../components/InfoButton';
 
 export default function SeedPhraseScreen() {

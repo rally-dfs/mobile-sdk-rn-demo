@@ -8,7 +8,6 @@ import ScreenContainer from '../components/ScreenContainer';
 import StandardButton from '../components/StandardButton';
 import {StandardHeader} from '../components/StandardHeader';
 import {balance as balanceState} from '../state';
-import {sleep} from '../utils';
 
 const DESTINATION_PUBLIC_ADDRESS = '0xdACa431667d69cC1aE79dfeF247A2bb0A1e127C4';
 
@@ -20,15 +19,7 @@ export default function LogoScreen() {
     setTransfering(true);
 
     await RlyNetwork.transfer(DESTINATION_PUBLIC_ADDRESS, 1);
-
-    let newBalance = await RlyNetwork.getBalance();
-
-    const originalBalance = balance || 0;
-
-    while (newBalance !== originalBalance - 1) {
-      newBalance = await RlyNetwork.getBalance();
-      sleep(1000);
-    }
+    const newBalance = await RlyNetwork.getBalance();
 
     setBalance(newBalance);
     setTransfering(false);

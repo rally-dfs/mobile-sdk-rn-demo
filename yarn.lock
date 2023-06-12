@@ -2083,6 +2083,20 @@
   dependencies:
     nanoid "^3.1.23"
 
+"@rly-network/mobile-sdk@^0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@rly-network/mobile-sdk/-/mobile-sdk-0.3.1.tgz#c4a01b8519538e74170cc532a044dbfd6ef33f75"
+  integrity sha512-d400C0oliq/Acr5aGfncgwWf83xQ0IKnO+uti1blPNfV/vy5X1hURD12LGiDgPhjouASmT0Tkt/G7CBJz1T14A==
+  dependencies:
+    "@ethersproject/shims" "^5.7.0"
+    "@maticnetwork/maticjs" "^3.5.0"
+    "@maticnetwork/maticjs-ethers" "^1.0.2"
+    axios "^1.2.1"
+    buffer "^6.0.3"
+    ethers "^5.7.2"
+    react-native-get-random-values "^1.8.0"
+    yarn "^1.22.19"
+
 "@sideway/address@^4.1.3":
   version "4.1.4"
   resolved "https://registry.yarnpkg.com/@sideway/address/-/address-4.1.4.tgz#03dccebc6ea47fdc226f7d3d1ad512955d4783f0"
@@ -7169,19 +7183,6 @@ rlp@^2.2.4:
   integrity sha512-d5gdPmgQ0Z+AklL2NVXr/IoSjNZFfTVvQWzL/AM2AOcSzYP2xjlb0AC8YyCLc41MSNf6P6QVtjgPdmVtzb+4lQ==
   dependencies:
     bn.js "^5.2.0"
-
-rly-network-mobile-sdk@rally-dfs/rly-network-mobile-sdk:
-  version "0.1.7"
-  resolved "https://codeload.github.com/rally-dfs/rly-network-mobile-sdk/tar.gz/20550593670694af328bea74dc2de362590b4113"
-  dependencies:
-    "@ethersproject/shims" "^5.7.0"
-    "@maticnetwork/maticjs" "^3.5.0"
-    "@maticnetwork/maticjs-ethers" "^1.0.2"
-    axios "^1.2.1"
-    buffer "^6.0.3"
-    ethers "^5.7.2"
-    react-native-get-random-values "^1.8.0"
-    yarn "^1.22.19"
 
 run-parallel@^1.1.9:
   version "1.2.0"

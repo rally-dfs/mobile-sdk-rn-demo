@@ -9,7 +9,7 @@ import {account, userDetails as userDetailsState} from '../state';
 import {
   createAccount as createRlyAccount,
   getAccount,
-} from 'rly-network-mobile-sdk';
+} from '@rly-network/mobile-sdk';
 import InfoButton from '../components/InfoButton';
 
 export default function AppAccountSignupScreen() {

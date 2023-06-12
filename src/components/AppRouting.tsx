@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 //@ts-ignore
-import {getAccount} from 'rly-network-mobile-sdk';
+import {getAccount} from '@rly-network/mobile-sdk';
 import ScreenContainer from './ScreenContainer';
 import {ActivityIndicator, StyleSheet, View} from 'react-native';
 import AppAccountSignupScreen from '../screens/AppAccountSignupScreen';

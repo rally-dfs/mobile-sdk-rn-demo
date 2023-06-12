@@ -4,7 +4,7 @@ import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {Image, Linking, Text, View} from 'react-native';
 import {useRecoilState, useRecoilValue} from 'recoil';
-import {permanentlyDeleteAccount} from 'rly-network-mobile-sdk';
+import {permanentlyDeleteAccount} from '@rly-network/mobile-sdk';
 import InfoButton from '../components/InfoButton';
 import ScreenContainer from '../components/ScreenContainer';
 import StandardButton from '../components/StandardButton';

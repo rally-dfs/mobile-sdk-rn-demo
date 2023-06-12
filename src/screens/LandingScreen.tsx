@@ -5,7 +5,7 @@ import {ActivityIndicator, Image, StyleSheet, Text, View} from 'react-native';
 import ScreenContainer from '../components/ScreenContainer';
 import StandardButton from '../components/StandardButton';
 //@ts-ignore Need to address this on the actual SDK repo.
-import {createAccount, getAccount} from 'rly-network-mobile-sdk';
+import {createAccount, getAccount} from '@rly-network/mobile-sdk';
 import {useRecoilState} from 'recoil';
 import {account} from '../state';
 import InfoButton from '../components/InfoButton';
