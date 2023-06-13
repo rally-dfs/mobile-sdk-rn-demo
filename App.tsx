@@ -8,16 +8,18 @@
 import React from 'react';
 
 import {RecoilRoot} from 'recoil';
-import {RlyMumbaiNetwork, Network} from '@rly-network/mobile-sdk';
+import {RlyLocalNetwork, Network} from '@rly-network/mobile-sdk';
 
 import AppRouting from './src/components/AppRouting';
+import ErrorToast from './src/components/ErrorToast';
 
-export const RlyNetwork: Network = RlyMumbaiNetwork;
+export const RlyNetwork: Network = RlyLocalNetwork;
 
 function App(): JSX.Element {
   return (
     <RecoilRoot>
       <AppRouting />
+      <ErrorToast />
     </RecoilRoot>
   );
 }
