@@ -17,7 +17,7 @@ export default function AppAccountSignupScreen() {
   const [, setUserDetails] = useRecoilState(userDetailsState);
   const [, setAccount] = useRecoilState(account);
 
-  const [username, setUsername] = useState('');
+  const [username] = useState('');
   const [name, setName] = useState('');
 
   const createAccount = async () => {
@@ -42,8 +42,8 @@ export default function AppAccountSignupScreen() {
           <TextInput
             placeholder="Name"
             style={styles.textInput}
-            onChange={e => {
-              setName(e.target.value);
+            onChangeText={e => {
+              setName(e);
             }}
           />
         </View>

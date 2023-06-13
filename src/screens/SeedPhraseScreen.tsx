@@ -10,7 +10,7 @@ import InfoButton from '../components/InfoButton';
 
 export default function SeedPhraseScreen() {
   const [didConfirm, setDidConfirm] = useState(false);
-  const [seed, setSeed] = useState<undefined | string>();
+  const [seed, setSeed] = useState<undefined | null | string>();
 
   useEffect(() => {
     const doAsyncWork = async () => {

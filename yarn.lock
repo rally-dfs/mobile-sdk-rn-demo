@@ -1776,9 +1776,9 @@
     ethers "^5.5.1"
 
 "@maticnetwork/maticjs@^3.5.0":
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/@maticnetwork/maticjs/-/maticjs-3.5.0.tgz#a20f353dc283199b0cd74f2c34aa0f25f69cf57c"
-  integrity sha512-f7wZucF38Ii/nIBV9qqQzlEE33/IWCVaToSXIhGC3DaZZME9VlUf4cgt/n43hQouwYpmkpgEoTDDs3QzTr5UcQ==
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/@maticnetwork/maticjs/-/maticjs-3.6.0.tgz#4e7bdedd62aae8f6620a95bd91796e6a0a315011"
+  integrity sha512-vMKFpfFJmdMgtCPsBRtppSVJrnNNoKtSnJW2/kvcgjVDH1AZpNBR2wMXa7KokvPgUQLInXbzsSzGievB3gERnQ==
   dependencies:
     "@ethereumjs/block" "^3.6.2"
     ethereumjs-util "^7.1.4"
@@ -2084,9 +2084,9 @@
     nanoid "^3.1.23"
 
 "@rly-network/mobile-sdk@^0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@rly-network/mobile-sdk/-/mobile-sdk-0.3.1.tgz#c4a01b8519538e74170cc532a044dbfd6ef33f75"
-  integrity sha512-d400C0oliq/Acr5aGfncgwWf83xQ0IKnO+uti1blPNfV/vy5X1hURD12LGiDgPhjouASmT0Tkt/G7CBJz1T14A==
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@rly-network/mobile-sdk/-/mobile-sdk-0.3.2.tgz#76fef2aa727d67cadd2b48bdd7fec938225dc291"
+  integrity sha512-RYu25PHiKWv2ATALMioK3w7rUZRoPoXudmtn7GIOSjhmfFrP4ICn3dwuoBmNKKgtO+eEQMrr3s3Ljnvv9p/mrA==
   dependencies:
     "@ethersproject/shims" "^5.7.0"
     "@maticnetwork/maticjs" "^3.5.0"
@@ -2237,9 +2237,9 @@
     "@types/node" "*"
 
 "@types/node@*":
-  version "20.1.1"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.1.1.tgz#afc492e8dbe7f672dd3a13674823522b467a45ad"
-  integrity sha512-uKBEevTNb+l6/aCQaKVnUModfEMjAl98lw2Si9P5y4hLu9tm6AlX2ZIoXZX6Wh9lJueYPrGPKk5WMCNHg/u6/A==
+  version "20.3.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.3.1.tgz#e8a83f1aa8b649377bb1fb5d7bac5cb90e784dfe"
+  integrity sha512-EhcH/wvidPy1WeML3TtYFGR83UzjxeWRen9V402T8aUGYsCHOmfoisV3ZSg03gAFIbLq8TnWOJ0f4cALtnSEUg==
 
 "@types/pbkdf2@^3.0.0":
   version "3.1.0"
@@ -6860,9 +6860,9 @@ react-native-codegen@^0.71.5:
     nullthrows "^1.1.1"
 
 react-native-get-random-values@^1.8.0:
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/react-native-get-random-values/-/react-native-get-random-values-1.8.0.tgz#1cb4bd4bd3966a356e59697b8f372999fe97cb16"
-  integrity sha512-H/zghhun0T+UIJLmig3+ZuBCvF66rdbiWUfRSNS6kv5oDSpa1ZiVyvRWtuPesQpT8dXj+Bv7WJRQOUP+5TB1sA==
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/react-native-get-random-values/-/react-native-get-random-values-1.9.0.tgz#6cb30511c406922e75fe73833dc1812a85bfb37e"
+  integrity sha512-+29IR2oxzxNVeaRwCqGZ9ABadzMI8SLTBidrIDXPOkKnm5+kEmLt34QKM4JV+d2usPErvKyS85le0OmGTHnyWQ==
   dependencies:
     fast-base64-decode "^1.0.0"
 
