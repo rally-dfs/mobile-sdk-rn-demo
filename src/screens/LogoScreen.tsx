@@ -1,24 +1,33 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useState} from 'react';
 import {ActivityIndicator, Text, View} from 'react-native';
-import {useRecoilState} from 'recoil';
+import {useRecoilState, useSetRecoilState} from 'recoil';
 import {RlyNetwork} from '../../App';
 import InfoButton from '../components/InfoButton';
 import ScreenContainer from '../components/ScreenContainer';
 import StandardButton from '../components/StandardButton';
 import {StandardHeader} from '../components/StandardHeader';
-import {balance as balanceState} from '../state';
+import {balance as balanceState, errorMessage} from '../state';
 
 const DESTINATION_PUBLIC_ADDRESS = '0xdACa431667d69cC1aE79dfeF247A2bb0A1e127C4';
 
 export default function LogoScreen() {
   const [transfering, setTransfering] = useState(false);
   const [balance, setBalance] = useRecoilState(balanceState);
+  const setErrorMessage = useSetRecoilState(errorMessage);
 
   const sendRly = async () => {
     setTransfering(true);
 
-    await RlyNetwork.transfer(DESTINATION_PUBLIC_ADDRESS, 1);
+    try {
+      await RlyNetwork.transfer(DESTINATION_PUBLIC_ADDRESS, 1);
+    } catch (e: any) {
+      setErrorMessage({
+        title: 'Unable to transfer',
+        body: 'Errow was: ' + e.message,
+      });
+      setTransfering(false);
+    }
     const newBalance = await RlyNetwork.getBalance();
 
     setBalance(newBalance);

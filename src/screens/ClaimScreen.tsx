@@ -2,23 +2,32 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {useState} from 'react';
 import {ActivityIndicator, Text, View} from 'react-native';
-import {useRecoilState} from 'recoil';
+import {useRecoilState, useSetRecoilState} from 'recoil';
 import {RlyNetwork} from '../../App';
 import InfoButton from '../components/InfoButton';
 import ScreenContainer from '../components/ScreenContainer';
 import StandardButton from '../components/StandardButton';
 import {StandardHeader} from '../components/StandardHeader';
-import {balance as balanceState} from '../state';
+import {balance as balanceState, errorMessage} from '../state';
 
 export default function ClaimScreen() {
   const navigation = useNavigation();
   const [claiming, setClaiming] = useState(false);
   const [, setBalance] = useRecoilState(balanceState);
+  const setErrorMessage = useSetRecoilState(errorMessage);
 
   const claimTokens = async () => {
     setClaiming(true);
 
-    await RlyNetwork.registerAccount();
+    try {
+      await RlyNetwork.registerAccount();
+    } catch (e: any) {
+      setErrorMessage({
+        title: 'Unable to perform claim',
+        body: 'Errow was: ' + e.message,
+      });
+      setClaiming(false);
+    }
 
     const newBalance = await RlyNetwork.getBalance();
 
