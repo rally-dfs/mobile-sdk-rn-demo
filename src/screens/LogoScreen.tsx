@@ -9,7 +9,7 @@ import StandardButton from '../components/StandardButton';
 import {StandardHeader} from '../components/StandardHeader';
 import {balance as balanceState, errorMessage} from '../state';
 
-const DESTINATION_PUBLIC_ADDRESS = '0xdACa431667d69cC1aE79dfeF247A2bb0A1e127C4';
+const DESTINATION_PUBLIC_ADDRESS = '0xe75625f0c8659f18caf845eddae30f5c2a49cb00';
 
 export default function LogoScreen() {
   const [transfering, setTransfering] = useState(false);
