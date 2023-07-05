@@ -61,3 +61,6 @@ yarn-error.log
 
 # Temporary files created by Metro to check the health of the file watcher
 .metro-health-check*
+
+#Private Config files
+src/private_config.ts
