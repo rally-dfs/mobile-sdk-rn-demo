@@ -3,6 +3,9 @@ definitions:
     node: 16.14.2
     npm: latest
   scripts:
+    - &setup_private_config
+      name: Setup private config files
+      script: cp src/private_config.example src/private_config.ts
     - &yarn_install
       name: Yarn install
       script: yarn install
@@ -27,14 +30,15 @@ workflows:
         - $CM_BUILD_DIR/node_modules
     triggering:
       events:
-        - push
+        - pull_request
       branch_patterns:
-        - pattern: '*'
+        - pattern: 'main'
           include: true
-          source: true
-      cancel_previous_builds: false
+          source: false
+      cancel_previous_builds: true
     scripts:
       - *yarn_install
+      - *setup_private_config
       - *run_linter
       - *compile_typescript
     publishing:
