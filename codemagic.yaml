@@ -1,0 +1,42 @@
+definitions:
+  default_environments: &default_environments
+    node: 16.14.2
+    npm: latest
+  scripts:
+    - &yarn_install
+      name: Yarn install
+      script: yarn install
+    - &run_linter
+      name: Run linter
+      script: yarn lint
+    - &compile_typescript
+      name: Run typescript compiler
+      script: yarn tsc
+    - &yarn_test
+      name: Yarn test
+      script: yarn test
+
+workflows:
+  static-checks:
+    name: Static checks
+    max_build_duration: 60
+    environment:
+      <<: *default_environments
+    cache:
+      cache_paths:
+        - $CM_BUILD_DIR/node_modules
+    triggering:
+      events:
+        - push
+      branch_patterns:
+        - pattern: '*'
+          include: true
+          source: true
+      cancel_previous_builds: false
+    scripts:
+      - *yarn_install
+      - *run_linter
+      - *compile_typescript
+    publishing:
+      slack:
+        channel: '#ci-builds'
