@@ -20,7 +20,7 @@ export default function ClaimScreen() {
     setClaiming(true);
 
     try {
-      await RlyNetwork.registerAccount();
+      await RlyNetwork.claimRly();
     } catch (e: any) {
       setErrorMessage({
         title: 'Unable to perform claim',
