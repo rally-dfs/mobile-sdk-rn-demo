@@ -2240,10 +2240,10 @@
   dependencies:
     nanoid "^3.1.23"
 
-"@rly-network/mobile-sdk@^1.0.0-beta.0":
-  version "1.0.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@rly-network/mobile-sdk/-/mobile-sdk-1.0.0-beta.0.tgz#f78d571a0b31dd87c13b7b480d97ba76cb33daac"
-  integrity sha512-++C82XV8JBDB43UL1oUh15Wu97/50/7Q0DabWSxd1GU98x7/fAjJQiYeDOZxa3G03B43RxsZ7CpCAAud/+rD6Q==
+"@rly-network/mobile-sdk@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@rly-network/mobile-sdk/-/mobile-sdk-1.1.0.tgz#811f7409f8a4f033f06d4c13017b34cfbb921c8a"
+  integrity sha512-pDtvs+LDjoI17cG+kArvyTzua4LtHO3T3X30ViuiD9mQ1qQASzANDwcX9ox7vcSANJPdxKEpkGUkaqiJkzQRQw==
   dependencies:
     "@ethersproject/shims" "^5.7.0"
     "@maticnetwork/maticjs" "^3.5.0"
