@@ -491,7 +491,7 @@ PODS:
     - React-jsi (= 0.72.3)
     - React-logger (= 0.72.3)
     - React-perflogger (= 0.72.3)
-  - rly-network-mobile-sdk (1.0.0-beta.0):
+  - rly-network-mobile-sdk (1.1.2):
     - React-Core
   - RNCClipboard (1.11.2):
     - React-Core
@@ -730,7 +730,7 @@ SPEC CHECKSUMS:
   React-runtimescheduler: 837c1bebd2f84572db17698cd702ceaf585b0d9a
   React-utils: bcb57da67eec2711f8b353f6e3d33bd8e4b2efa3
   ReactCommon: 3ccb8fb14e6b3277e38c73b0ff5e4a1b8db017a9
-  rly-network-mobile-sdk: a2141fc407b0b8ad7ebb6f356ea1c6711a143379
+  rly-network-mobile-sdk: d4394df6461fb1d3c63d8df22d0775af30fed470
   RNCClipboard: 3f0451a8100393908bea5c5c5b16f96d45f30bfc
   RNScreens: 218801c16a2782546d30bd2026bb625c0302d70f
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
