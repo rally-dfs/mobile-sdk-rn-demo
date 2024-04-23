@@ -63,7 +63,7 @@ export default function ProfileScreen() {
               title="View on Explorer"
               onPress={async () => {
                 Linking.openURL(
-                  `https://mumbai.polygonscan.com/address/${rlyAccount}`,
+                  `https://www.oklink.com/amoy/address/${rlyAccount}`,
                 );
               }}
             />
